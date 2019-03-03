@@ -6,8 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+### Changed
+- Renamed deploy task in `.circleci/config.yml` to publish
+### Added
+- Added `--no-dev` in `.circleci/config.yml` deploy task
+### Fixed
+- CHANGELOG.md had 0.1.0 listed twice
 
-## [0.1.0] - 2019-03-03
+## [0.1.1] - 2019-03-03
 ### Changed
 - Went from MIT to Apache 2.0 License, to match aiohttp
 - Example now uses `healthcheck_handler` instead of just `handler`
