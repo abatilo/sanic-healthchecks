@@ -9,7 +9,7 @@ from sanic_healthchecks import start_healthcheck_server
 APP = Sanic()
 
 
-async def handler(_):
+async def healthcheck_handler(_):
     """Demonstrates a simple healthcheck example.
     """
     data = {"status": "ok"}
@@ -24,5 +24,5 @@ async def root(_):
 
 
 if __name__ == "__main__":
-    start_healthcheck_server(handler)
+    start_healthcheck_server(healthcheck_handler)
     APP.run(host="0.0.0.0", port=8000)
