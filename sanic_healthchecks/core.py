@@ -9,8 +9,36 @@ a service are still accessible from the host or container that is running the
 actual Sanic application.
 """
 import asyncio
+import json
 import threading
 from aiohttp import web
+
+
+# Disabled because pylint incorrectly parses multiline arguments like this:
+# https://github.com/PyCQA/pylint/issues/289
+# pylint: disable=C0330
+def healthcheck_response(
+    data,
+    *,
+    text=None,
+    body=None,
+    status=200,
+    reason=None,
+    headers=None,
+    content_type="application/json",
+    dumps=json.dumps,
+):
+    """A response for a healthcheck."""
+    return web.json_response(
+        data,
+        text=text,
+        body=body,
+        status=status,
+        reason=reason,
+        headers=headers,
+        content_type=content_type,
+        dumps=dumps,
+    )
 
 
 async def main(handler, host, port):

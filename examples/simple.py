@@ -2,9 +2,8 @@
 """
 from sanic import Sanic
 from sanic.response import json
-from aiohttp import web
 
-from sanic_healthchecks import start_healthcheck_server
+from sanic_healthchecks import start_healthcheck_server, healthcheck_response
 
 APP = Sanic()
 
@@ -13,7 +12,7 @@ async def healthcheck_handler(_):
     """Demonstrates a simple healthcheck example.
     """
     data = {"status": "ok"}
-    return web.json_response(data)
+    return healthcheck_response(data)
 
 
 @APP.route("/")
