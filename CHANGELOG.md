@@ -6,10 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
+
+## [0.2.0] - 2019-03-09
 ### Changed
 - Renamed deploy task in `.circleci/config.yml` to publish
 ### Added
 - Added `--no-dev` in `.circleci/config.yml` deploy task
+- Expose wrapper for aiohttp web response, instead of leaking that we're using aiohttp under the hood
+- Badge for downloads per month added to README.md
+- Example for multiple healthchecks running concurrently
 ### Fixed
 - CHANGELOG.md had 0.1.0 listed twice
 

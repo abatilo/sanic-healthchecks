@@ -3,6 +3,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 [![PyPI version](https://badge.fury.io/py/sanic-healthchecks.svg)](https://badge.fury.io/py/sanic-healthchecks)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/sanic-healthchecks.svg)](https://pypi.python.org/pypi/sanic-healthchecks/)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/sanic-healthchecks.svg)
 
 sanic-healthchecks makes it easy for you to start a healthcheck server on a
 different thread than your actual Sanic application.
