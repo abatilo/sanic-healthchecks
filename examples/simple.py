@@ -19,7 +19,7 @@ async def healthcheck_handler(_):
 async def root(_):
     """Boilerplate Sanic endpoint.
     """
-    return json({"hello": "world"})
+    return json({"example_of": "a very simple healthcheck"})
 
 
 if __name__ == "__main__":

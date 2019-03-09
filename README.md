@@ -28,7 +28,7 @@ async def healthcheck_handler(_):
 
 @APP.route("/")
 async def root(_):
-    return json({"hello": "world"})
+    return json({"example_of": "a very simple healthcheck"})
 
 
 if __name__ == "__main__":
