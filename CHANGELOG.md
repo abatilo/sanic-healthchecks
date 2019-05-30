@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2019-05-29
+- Nothing changed. This library has been used in production long enough to feel
+  confident in it now.
+
 ## [0.2.0] - 2019-03-09
 ### Changed
 - Renamed deploy task in `.circleci/config.yml` to publish

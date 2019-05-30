@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sanic-healthchecks"
-version = "0.2.0"
+version = "1.0.0"
 description = "A small wrapper for making it easy to add a healthcheck server to your Sanic application"
 authors = ["Aaron <AaronBatilo@gmail.com>"]
 license = "Apache 2.0"
@@ -11,7 +11,7 @@ repository = "https://github.com/abatilo/sanic-healthchecks"
 keywords = ['sanic', 'health', 'checks', 'healthchecks', 'observability']
 
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3.7",
