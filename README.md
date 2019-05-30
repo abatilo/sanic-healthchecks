@@ -1,5 +1,4 @@
 # sanic-healthchecks
-[![CircleCI](https://img.shields.io/circleci/project/github/abatilo/sanic-healthchecks.svg)](https://circleci.com/gh/abatilo/sanic-healthchecks)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 [![PyPI version](https://badge.fury.io/py/sanic-healthchecks.svg)](https://badge.fury.io/py/sanic-healthchecks)
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/sanic-healthchecks.svg)](https://pypi.python.org/pypi/sanic-healthchecks/)
