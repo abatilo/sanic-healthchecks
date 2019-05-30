@@ -3,7 +3,18 @@ workflow "Publish sanic-healthchecks" {
   resolves = ["publish"]
 }
 
+action "Run black" {
+  uses = "abatilo/actions-poetry@3.7.3"
+  args = ["run", "python", "-m", "black", "--check", "."]
+}
+
+action "Run pylint" {
+  uses = "abatilo/actions-poetry@3.7.3"
+  args = ["run", "python", "-m", "pylint", "examples", "sanic_healthchecks"]
+}
+
 action "Master branch" {
+  needs = ["Run pylint", "Run black"]
   uses = "actions/bin/filter@master"
   args = "branch master"
 }
