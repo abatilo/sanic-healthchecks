@@ -3,12 +3,19 @@ workflow "Publish sanic-healthchecks" {
   resolves = ["publish"]
 }
 
+action "Install" {
+  uses = "abatilo/actions-poetry@3.7.3"
+  args = ["install"]
+}
+
 action "Run black" {
+  needs = "Install"
   uses = "abatilo/actions-poetry@3.7.3"
   args = ["run", "python", "-m", "black", "--check", "."]
 }
 
 action "Run pylint" {
+  needs = "Install"
   uses = "abatilo/actions-poetry@3.7.3"
   args = ["run", "python", "-m", "pylint", "examples", "sanic_healthchecks"]
 }
