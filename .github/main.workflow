@@ -1,7 +1,6 @@
 workflow "Publish sanic-healthchecks" {
   on = "push"
   resolves = ["publish"]
-  secrets = ["PYPI_USERNAME", "PYPI_PASSWORD"]
 }
 
 action "publish" {
