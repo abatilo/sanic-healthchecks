@@ -1,8 +1,5 @@
-on:
-  push:
-    branches:
-      - master
-name: Publish sanic-healthchecks
+on: pull_reques
+name: PR builder for sanic-healthchecks
 jobs:
   black:
     name: Install
@@ -30,13 +27,3 @@ jobs:
       uses: abatilo/actions-poetry@master
       with:
         args: run python -m pylint examples sanic_healthchecks
-  publish:
-    - name: publish
-      uses: abatilo/actions-poetry@master
-      needs: [black, pylint]
-      env:
-        PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-        PYPI_USERNAME: ${{ secrets.PYPI_USERNAME }}
-      with:
-        args: publish --build --no-interaction -vv --username $PYPI_USERNAME --password
-          $PYPI_PASSWORD
