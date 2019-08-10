@@ -5,7 +5,7 @@ on:
 name: Publish sanic-healthchecks
 jobs:
   black:
-    name: Install
+    name: black
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -18,7 +18,7 @@ jobs:
       with:
         args: run python -m black --check .
   pylint:
-    name: Install
+    name: pylint
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -31,6 +31,9 @@ jobs:
       with:
         args: run python -m pylint examples sanic_healthchecks
   publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
     - name: publish
       uses: abatilo/actions-poetry@master
       needs: [black, pylint]

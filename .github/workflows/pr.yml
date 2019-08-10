@@ -2,7 +2,7 @@ on: pull_reques
 name: PR builder for sanic-healthchecks
 jobs:
   black:
-    name: Install
+    name: black
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -15,7 +15,7 @@ jobs:
       with:
         args: run python -m black --check .
   pylint:
-    name: Install
+    name: pylint
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
