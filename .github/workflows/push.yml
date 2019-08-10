@@ -36,6 +36,10 @@ jobs:
     needs: [black, pylint]
     steps:
     - uses: actions/checkout@master
+    - name: Install
+      uses: abatilo/actions-poetry@master
+      with:
+        args: install
     - name: publish
       uses: abatilo/actions-poetry@master
       env:
