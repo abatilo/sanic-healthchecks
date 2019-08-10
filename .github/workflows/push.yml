@@ -1,0 +1,32 @@
+on: push
+name: Publish sanic-healthchecks
+jobs:
+  install:
+    name: Install
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Install
+      uses: abatilo/actions-poetry@3.7.3
+      with:
+        args: install
+    - name: Run black
+      uses: abatilo/actions-poetry@3.7.3
+      with:
+        args: run python -m black --check .
+    - name: Run pylint
+      uses: abatilo/actions-poetry@3.7.3
+      with:
+        args: run python -m pylint examples sanic_healthchecks
+    - name: Master branch
+      uses: actions/bin/filter@master
+      with:
+        args: branch master
+    - name: publish
+      uses: abatilo/actions-poetry@3.7.3
+      env:
+        PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        PYPI_USERNAME: ${{ secrets.PYPI_USERNAME }}
+      with:
+        args: publish --build --no-interaction -vv --username $PYPI_USERNAME --password
+          $PYPI_PASSWORD
